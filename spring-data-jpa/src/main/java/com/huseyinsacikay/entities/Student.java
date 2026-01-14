@@ -14,6 +14,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
+import jakarta.persistence.UniqueConstraint;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -44,7 +45,8 @@ public class Student {
 	@JoinTable(
 		name = "student_course", 
 		joinColumns = @JoinColumn(name = "student_id"),
-		inverseJoinColumns = @JoinColumn(name = "course_id")
+		inverseJoinColumns = @JoinColumn(name = "course_id"),
+		uniqueConstraints = @UniqueConstraint(columnNames = {"student_id", "course_id"})
 	)
 	private List<Course> courses;
 }

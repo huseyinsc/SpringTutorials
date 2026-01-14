@@ -10,13 +10,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.huseyinsacikay.controller.IStudentController;
 import com.huseyinsacikay.dto.DtoStudent;
 import com.huseyinsacikay.dto.DtoStudentIU;
-import com.huseyinsacikay.entities.Student;
 import com.huseyinsacikay.services.IStudentService;
 
 import jakarta.validation.Valid;

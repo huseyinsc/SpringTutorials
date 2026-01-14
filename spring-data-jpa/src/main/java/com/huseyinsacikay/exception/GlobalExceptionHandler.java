@@ -22,7 +22,7 @@ public class GlobalExceptionHandler {
 	}
 	
 	@ExceptionHandler(value = MethodArgumentNotValidException.class)
-	public ResponseEntity<ApiError> handleMethodArgumentNotValidException(MethodArgumentNotValidException ex) {
+	public ResponseEntity< ApiError<?> > handleMethodArgumentNotValidException(MethodArgumentNotValidException ex) {
 		Map<String, List<String>> errorsMap = new HashMap<>();
 		for (ObjectError objError : ex.getBindingResult().getAllErrors()) {
 			String fieldName = ((FieldError)objError).getField();
