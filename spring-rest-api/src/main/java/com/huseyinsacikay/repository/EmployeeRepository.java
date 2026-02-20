@@ -46,9 +46,18 @@ public class EmployeeRepository {
 			}
 		}
 		else if(!firstEmpty || !lastEmpty) {
-			for (Employee employee : employeeList) {
-				if(firstName.equalsIgnoreCase( employee.getFirstName() ) || lastName.equalsIgnoreCase( employee.getLastName() )) {
-					foundEmployeeList.add(employee);
+			if(!firstEmpty ) {
+				for (Employee employee : employeeList) {
+					if(firstName.equalsIgnoreCase( employee.getFirstName() )) {
+						foundEmployeeList.add(employee);
+					}
+				}
+			}
+			else {
+				for (Employee employee : employeeList) {
+					if(lastName.equalsIgnoreCase( employee.getLastName() )) {
+						foundEmployeeList.add(employee);
+					}
 				}
 			}
 		}
